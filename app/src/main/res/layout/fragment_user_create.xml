@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/app_main_bg"
+    android:padding="20dp">
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/name_input_wrapper"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="@string/user_row_name_label"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/name_input"
+        android:fontFamily="sans-serif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/email_input_wrapper"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      android:hint="@string/user_row_email_label"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/name_input_wrapper">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/email_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"/>
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <RadioGroup
+      android:id="@+id/gender_row_id_container"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:checkedButton="@+id/radio_male"
+      android:orientation="vertical"
+      app:layout_constraintTop_toBottomOf="@+id/email_input_wrapper">
+
+    <RadioButton
+        android:id="@+id/radio_male"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="@string/user_row_male_label" />
+
+    <RadioButton
+        android:id="@+id/radio_female"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="@string/user_row_female_label" />
+  </RadioGroup>
+
+  <androidx.appcompat.widget.SwitchCompat
+      android:id="@+id/active_switch"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/user_row_active_label"
+      android:fontFamily="sans-serif"
+      app:layout_constraintTop_toBottomOf="@+id/gender_row_id_container"
+      app:layout_constraintStart_toStartOf="parent"/>
+
+  <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/addButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="30dp"
+      android:text="@string/action_add"
+      android:background="@drawable/button_background"
+      android:fontFamily="sans-serif"
+      app:layout_constraintTop_toBottomOf="@+id/active_switch"
+      app:layout_constraintBottom_toBottomOf="parent" />
+
+  <ProgressBar
+      android:id="@+id/progress"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>
